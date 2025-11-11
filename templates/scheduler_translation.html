@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>Translation task scheduler</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Transaltion task config</h1>
+    <label>execution interval (miniutes):</label>
+    <input id="interval" type="number" value="10" min="1">
+    <button onclick="updateScheduler()">update scheduler</button>
+    <button onclick="runNow()">execute now once</button>
+    <p id="status"></p>
+  </div>
+
+  <script>
+    const API_TOKEN = "your_secret_token"; // same with app.config["API_TOKEN"]
+
+    async function updateScheduler() {
+      const interval = document.getElementById("interval").value;
+      const res = await fetch("/api/translation_scheduler/config", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${API_TOKEN}`
+        },
+        body: JSON.stringify({ interval })
+      });
+      const data = await res.json();
+      document.getElementById("status").innerText = 
+        `Tansaltion task will be executed ${data.interval} minutes later`;
+    }
+
+    async function runNow() {
+      const res = await fetch("/api/translation_scheduler/run_now", {
+        method: "POST",
+        headers: { "Authorization": `Bearer ${API_TOKEN}` }
+      });
+      const data = await res.json();
+      document.getElementById("status").innerText = 
+        data.status === "ok" ? "Tansaltion task executed" : `Error: ${data.message}`;
+    }
+  </script>
+</body>
+</html>
