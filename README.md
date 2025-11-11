@@ -1,6 +1,9 @@
 # AI-Translation-API-demo
 A lightweight RESTful API for translating text into a specified language, built with Flask, SQLAlchemy, and a background AI translation module.
 This project is mainly for personal learning and demonstration purposes, showcasing REST API design, APSheducler task handling and sqlite database management.
+Following screenshot is the front-end demo powered by Tailwind for this project, which can be accessed through visiting the defaul "/" page.
+<img width="1104" height="1347" alt="image" src="https://github.com/user-attachments/assets/dd6a2e76-bea4-4697-af5e-405478dc0601" />
+
 
 # How to install & run
 This project is developed under python 3.11.11, haven't test other version.
