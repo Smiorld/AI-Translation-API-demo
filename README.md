@@ -2,7 +2,7 @@
 A lightweight RESTful API for translating text into a specified language, built with Flask, SQLAlchemy, and a background AI translation module.
 This project is mainly for personal learning and demonstration purposes, showcasing REST API design, APSheducler task handling and sqlite database management.
 Following screenshot is the front-end demo powered by Tailwind for this project, which can be accessed through visiting the defaul "/" page.
-<img width="1104" height="1347" alt="image" src="https://github.com/user-attachments/assets/dd6a2e76-bea4-4697-af5e-405478dc0601" />
+<img width="749" height="935" alt="image" src="https://github.com/user-attachments/assets/2def6b9b-832d-43f2-b47f-18c74a382d3c" />
 
 
 # How to install & run
